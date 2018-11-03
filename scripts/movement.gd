@@ -20,10 +20,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
 		nextMotion.x += 1
 	#Enter or space by default
-	elif Input.is_action_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		nextMotion.y -= 1
-	else:
-		motion.x = 0
+		
 	#Apply current motion
 	motion.x = SPEED * nextMotion.x
 	motion.y += JUMP_SPEED * nextMotion.y 
