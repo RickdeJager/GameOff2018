@@ -1,19 +1,26 @@
-extends Node
+extends Node2D
 
 const GRID_SIZE = 64
 const SENSE_GRID_SIZE = 3
+var screenSize
 var parent
+var camera
 
-var senseBools = []
+var senseBools
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	parent = get_parent()
+	camera = parent.get_node("PlayerCamera")
+	screenSize = get_viewport_rect().size
 	senseBools = sense()
 
 func _draw():
-	var basePos = Vector2(50, -100)
+	var inv = get_global_transform().inverse()
+	draw_set_transform(inv.get_origin(), inv.get_rotation(), inv.get_scale())
+	var center = camera.get_camera_screen_center()
+	var basePos = center - screenSize/2 + Vector2(50, 50)
 	var offset = 30
 	for i in range(len(senseBools)):
 		for j in range(len(senseBools[i])):

@@ -14,6 +14,10 @@ config/name="GameOff"
 run/main_scene="res://scenes/Root.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
