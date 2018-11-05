@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sprites/wall.png" type="Texture" id=1]
 [ext_resource path="res://scripts/movement.gd" type="Script" id=2]
 [ext_resource path="res://sprites/player.png" type="Texture" id=3]
 [ext_resource path="res://scripts/sensors.gd" type="Script" id=4]
+[ext_resource path="res://sprites/spike/spike.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -21,9 +22,11 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Root" type="Node" index="0"]
+[node name="Root" type="Node"]
 
 [node name="walls" type="Node" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="wall" type="StaticBody2D" parent="walls" index="0"]
 
@@ -601,8 +604,11 @@ texture = ExtResource( 1 )
 
 shape = SubResource( 2 )
 
-[node name="Player" type="KinematicBody2D" parent="." index="1"]
+[node name="Player" type="KinematicBody2D" parent="." index="1" groups=[
+"player",
+]]
 
+editor/display_folded = true
 position = Vector2( 128, 64 )
 input_pickable = false
 collision_layer = 1
@@ -649,5 +655,9 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="spike" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 468.037, 168.222 )
 
 
