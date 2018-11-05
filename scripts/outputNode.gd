@@ -12,9 +12,9 @@ func _ready():
 	root = get_tree().get_root().get_node("Root")
 	editor = get_node("../..")
 	
-func _process(delta):
-	if connection:
-		connection.setValue(value)
+#func _process(delta):
+#	if connection:
+#		connection.setValue(value)
 		
 func setConnection(newConnection):
 	connection = newConnection

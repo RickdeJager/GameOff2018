@@ -8,18 +8,24 @@ var root
 func _ready():
 	root = get_tree().get_root().get_node("Root")
 	editor = get_node("../..")
-	print("Initialised input")
+
+func _process(delta):
+	if connection:
+		setValue(connection.value)
 	
 func _draw():
 	if connection:
 		var to = connection.global_position - global_position
-		draw_line(Vector2(0, 0), to , Color("#ffff00"), 1.0)
+		var color
+		if connection.value:
+			color = Color("#ff0000")
+		else:
+			color = Color("#eeeeee")
+		draw_line(Vector2(0, 0), to , color, 1.0)
 	
 func _input(event):
 	if not event is InputEventMouseButton or root.running:
 		return 
-	else:
-		print(get_parent().name)
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and not event.is_pressed() and editor.dragging:
 		#This may break in the future!
 		var space = get_world_2d().get_direct_space_state()
@@ -35,6 +41,8 @@ func _input(event):
 
 func setConnection(newConnection):
 	connection = newConnection
+	setValue(connection.value)
 	
 func setValue(newValue):
 	value = newValue
+	update()

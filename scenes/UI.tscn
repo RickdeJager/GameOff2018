@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://scripts/editor.gd" type="Script" id=2]
 [ext_resource path="res://scenes/notGate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/andGate.tscn" type="PackedScene" id=4]
 
-[node name="UI" type="PanelContainer" index="0"]
+[node name="UI" type="PanelContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -75,17 +76,26 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags" ]
 
 [node name="notGate" parent="HBoxContainer/Editor" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( -1.99998, 185 )
+position = Vector2( -2, 121 )
 scale = Vector2( 1, 1 )
 
-[node name="notGate2" parent="HBoxContainer/Editor" index="1" instance=ExtResource( 3 )]
+[node name="notGate4" parent="HBoxContainer/Editor" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( -98, 281 )
+position = Vector2( -34, 217 )
 scale = Vector2( 1, 1 )
 
-[node name="notGate3" parent="HBoxContainer/Editor" index="2" instance=ExtResource( 3 )]
+[node name="notGate2" parent="HBoxContainer/Editor" index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 158, 249 )
+position = Vector2( 62, 281 )
 scale = Vector2( 1, 1 )
+
+[node name="notGate3" parent="HBoxContainer/Editor" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 158, 121 )
+scale = Vector2( 1, 1 )
+
+[node name="andGate" parent="HBoxContainer/Editor" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 190, 217 )
 
 
