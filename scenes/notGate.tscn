@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/notGate.gd" type="Script" id=1]
+[ext_resource path="res://sprites/not.png" type="Texture" id=2]
+[ext_resource path="res://scenes/output.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/input.tscn" type="PackedScene" id=4]
+
+[node name="notGate" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="output" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 40, 0 )
+
+[node name="input" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -40.4929, -0.441338 )
+
+
