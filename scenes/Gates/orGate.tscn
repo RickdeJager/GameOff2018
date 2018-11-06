@@ -1,16 +1,19 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scripts/andGate.gd" type="Script" id=1]
-[ext_resource path="res://sprites/and.png" type="Texture" id=2]
-[ext_resource path="res://scenes/input.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/output.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/orGate.gd" type="Script" id=1]
+[ext_resource path="res://sprites/or.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Gates/elements/input.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Gates/elements/output.tscn" type="PackedScene" id=4]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 29.7317, 22.9979 )
+extents = Vector2( 28.5172, 22.0551 )
 
-[node name="andGate" type="Area2D"]
+[node name="orGate" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -31,13 +34,13 @@ position = Vector2( -40, -12 )
 
 [node name="inputNodeB" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -40, 12 )
+position = Vector2( -40.0968, 10.9724 )
 
 [node name="outputNode" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 40.4138, 0.166309 )
+position = Vector2( 41.1805, 0.406387 )
 
-[node name="hitbox" type="CollisionShape2D" parent="." index="4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
 
 shape = SubResource( 1 )
 

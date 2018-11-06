@@ -1,18 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://scripts/editor.gd" type="Script" id=2]
-[ext_resource path="res://scenes/notGate.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/andGate.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/orGate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/TermS.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/TermL.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/TermR.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Gates/notGate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Gates/andGate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Gates/orGate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Terminals/TermS.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Terminals/TermL.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Terminals/TermR.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Inputs/sensorNode.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Theme" id=1]
 
 
-[node name="UI" type="PanelContainer"]
+[node name="UI" type="PanelContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -84,31 +85,31 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags" ]
 
 [node name="notGate" parent="HBoxContainer/Editor" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 62, 153 )
+position = Vector2( 254, 89 )
 
 [node name="notGate4" parent="HBoxContainer/Editor" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 30, 249 )
+position = Vector2( -98, 185 )
 
 [node name="notGate2" parent="HBoxContainer/Editor" index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 126, 313 )
+position = Vector2( -258, 377 )
 
 [node name="notGate3" parent="HBoxContainer/Editor" index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 222, 153 )
+position = Vector2( -98, 313 )
 
 [node name="andGate" parent="HBoxContainer/Editor" index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 254, 249 )
+position = Vector2( 126, 121 )
 
 [node name="andGate2" parent="HBoxContainer/Editor" index="5" instance=ExtResource( 4 )]
 
-position = Vector2( 252, 345 )
+position = Vector2( 30, 185 )
 
 [node name="orGate" parent="HBoxContainer/Editor" index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 158, 57 )
+position = Vector2( 30, 313 )
 
 [node name="TermS" parent="HBoxContainer/Editor" index="7" instance=ExtResource( 6 )]
 
@@ -121,5 +122,9 @@ position = Vector2( 414, 249 )
 [node name="TermR" parent="HBoxContainer/Editor" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 414, 153 )
+
+[node name="sensorNode" parent="HBoxContainer/Editor" index="10" instance=ExtResource( 9 )]
+
+position = Vector2( -258, 153 )
 
 

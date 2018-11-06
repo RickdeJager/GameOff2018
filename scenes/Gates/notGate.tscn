@@ -2,8 +2,11 @@
 
 [ext_resource path="res://scripts/notGate.gd" type="Script" id=1]
 [ext_resource path="res://sprites/not.png" type="Texture" id=2]
-[ext_resource path="res://scenes/output.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/input.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Gates/elements/output.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Gates/elements/input.tscn" type="PackedScene" id=4]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

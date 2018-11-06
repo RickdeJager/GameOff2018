@@ -21,4 +21,3 @@ func _process(delta):
 		if beenRunning:
 			camera.offset = rect_global_position - camera.get_camera_screen_center() + screenSize/2
 			beenRunning = false
-

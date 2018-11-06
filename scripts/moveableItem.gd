@@ -13,7 +13,7 @@ func clickedThis(coord):
 		return len(results) > 0 and results[0]['collider'] == self
 	
 func _input(event):
-	#Sorry for the spaghetti here :(
+	# Sorry for the spaghetti here :(
 	if event is InputEventMouse and moving:
 		global_position = get_global_mouse_position() + offset
 		
