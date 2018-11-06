@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const UP = Vector2(0, -1)
 const SPEED = 300
-const JUMP_SPEED = 500
+const JUMP_SPEED = 524
 const GRAVITY = 17
 var motion = Vector2()
 var sensors
@@ -23,6 +23,7 @@ func _physics_process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	var nextMotion = Vector2()
+
 	if actions.has("L") or Input.is_action_pressed("ui_left"):
 		nextMotion.x -= 1
 	if actions.has("R") or Input.is_action_pressed("ui_right"):
