@@ -1,12 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/notGate.gd" type="Script" id=1]
 [ext_resource path="res://sprites/not.png" type="Texture" id=2]
 [ext_resource path="res://scenes/output.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/input.tscn" type="PackedScene" id=4]
 
-[node name="notGate" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
 
+custom_solver_bias = 0.0
+extents = Vector2( 30.191, 13.623 )
+
+[node name="notGate" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -21,5 +33,9 @@ position = Vector2( 40, 0 )
 [node name="input" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -40.4929, -0.441338 )
+
+[node name="hitbox" type="CollisionShape2D" parent="." index="3"]
+
+shape = SubResource( 1 )
 
 

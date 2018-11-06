@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scripts/moveableItem.gd"
 
 var inputNode
 var outputNode

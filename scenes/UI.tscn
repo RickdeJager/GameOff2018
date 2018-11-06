@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://scripts/editor.gd" type="Script" id=2]
 [ext_resource path="res://scenes/notGate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/andGate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/orGate.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Theme" id=1]
+
 
 [node name="UI" type="PanelContainer" index="0"]
 
@@ -53,8 +56,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = SubResource( 1 )
 alignment = 0
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
 [node name="Editor" type="VBoxContainer" parent="HBoxContainer" index="1"]
 
@@ -77,30 +81,30 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags" ]
 
 [node name="notGate" parent="HBoxContainer/Editor" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( -2, 121 )
-scale = Vector2( 1, 1 )
+position = Vector2( 62, 153 )
 
 [node name="notGate4" parent="HBoxContainer/Editor" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( -34, 217 )
-scale = Vector2( 1, 1 )
+position = Vector2( 30, 249 )
 
 [node name="notGate2" parent="HBoxContainer/Editor" index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 62, 281 )
-scale = Vector2( 1, 1 )
+position = Vector2( 126, 313 )
 
 [node name="notGate3" parent="HBoxContainer/Editor" index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 158, 121 )
-scale = Vector2( 1, 1 )
+position = Vector2( 222, 153 )
 
 [node name="andGate" parent="HBoxContainer/Editor" index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 190, 217 )
+position = Vector2( 254, 249 )
 
-[node name="orGate" parent="HBoxContainer/Editor" index="5" instance=ExtResource( 5 )]
+[node name="andGate2" parent="HBoxContainer/Editor" index="5" instance=ExtResource( 4 )]
 
-position = Vector2( 318, 153 )
+position = Vector2( 252, 345 )
+
+[node name="orGate" parent="HBoxContainer/Editor" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 382, 185 )
 
 
