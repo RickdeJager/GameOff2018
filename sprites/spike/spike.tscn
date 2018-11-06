@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="spike" type="KinematicBody2D" index="0" groups=[
+[node name="spike" type="KinematicBody2D" groups=[
 "hurts",
 ]]
 
@@ -22,17 +22,9 @@ script = ExtResource( 1 )
 
 texture = ExtResource( 2 )
 
-[node name="hitbox" type="CollisionShape2D" parent="." index="1"]
+[node name="hitbox_area" type="Area2D" parent="." index="1"]
 
-position = Vector2( 1.19209e-007, 1.19209e-007 )
-scale = Vector2( 3.2, 3.2 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="hitbox_area" type="Area2D" parent="." index="2"]
-
-position = Vector2( 1.90735e-006, 1.90735e-006 )
-scale = Vector2( 1.125, 1.125 )
+position = Vector2( 8.34465e-007, 8.34465e-007 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -43,7 +35,7 @@ audio_bus_name = "Master"
 
 [node name="hitbox" type="CollisionShape2D" parent="hitbox_area" index="0"]
 
-position = Vector2( 1.19209e-007, 1.19209e-007 )
+position = Vector2( -8.34465e-007, -8.34465e-007 )
 scale = Vector2( 3.2, 3.2 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]

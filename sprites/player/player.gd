@@ -13,7 +13,7 @@ NOT 7 OR 4 > S
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	sensors = get_node("Sensors")
+	sensors = get_node("sensors")
 	print(sensors.screenSize)
 	
 func interpret(CodeString):
