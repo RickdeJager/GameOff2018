@@ -1,14 +1,12 @@
-extends KinematicBody2D
+extends Area2D
 
 
 func _ready():
 	pass
 
 
-func _on_hitbox_area_body_entered(body):
+func _on_spike_body_entered(body):
 	var groups = body.get_groups()
-	
-	print("groups: " + str(groups))
 	
 	# we're only interested in collisions with the player
 	if not groups.has("player"):
@@ -16,4 +14,3 @@ func _on_hitbox_area_body_entered(body):
 	
 	# kill player
 	body.queue_free()
-	
