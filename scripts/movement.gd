@@ -6,6 +6,7 @@ const JUMP_SPEED = 500
 const GRAVITY = 17
 var motion = Vector2()
 var sensors
+var actions = []
 const code = """True > R
 NOT 7 OR 4 > S
 3 AND NOT 5 AND 7 > L"""
@@ -14,6 +15,9 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	sensors = get_node("Sensors")
+	
+func addAction(action):
+	actions.append(action)
 	
 func interpret(CodeString):
 	var senseBools = sensors.senseBools
@@ -77,7 +81,7 @@ func _physics_process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	var nextMotion = Vector2()
-	var actions = interpret(code)
+	#var actions = interpret(code)
 	if actions.has("L"):
 		nextMotion.x -= 1
 	if actions.has("R"):
@@ -94,3 +98,5 @@ func _physics_process(delta):
 	motion.y += GRAVITY
 	
 	motion = move_and_slide(motion, UP)
+	# Clear last frames actions
+	actions = []

@@ -7,6 +7,7 @@ var root
 
 func _ready():
 	root = get_tree().get_root().get_node("Root")
+	# BAD BAD BAD WILL GIVE BUGS
 	editor = get_node("../..")
 
 func _process(delta):
