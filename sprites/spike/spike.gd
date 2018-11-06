@@ -8,7 +8,7 @@ func _ready():
 func _on_hitbox_area_body_entered(body):
 	var groups = body.get_groups()
 	
-	print(groups)
+	print("groups: " + str(groups))
 	
 	# we're only interested in collisions with the player
 	if not groups.has("player"):

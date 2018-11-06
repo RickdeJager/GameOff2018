@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
+export (bool) var debug = false
+
 const UP = Vector2(0, -1)
 const SPEED = 300
-const JUMP_SPEED = 524
+const JUMP_SPEED = 530
 const GRAVITY = 17
+
+
 var motion = Vector2()
 var sensors
 const code = """True > R
@@ -22,9 +26,9 @@ func interpret(CodeString):
 	for line in CodeString.split('\n'):
 		var condition = line.split(" > ")[0].split(' ')
 		var action = line.split(" > ")[1]
-		#Evaluate the condition, if true add the action to a list.
-		#This does not support brackets yet, be can be done using recursion
-		#First fill in values
+		# Evaluate the condition, if true add the action to a list.
+		# This does not support brackets yet, be can be done using recursion
+		# First fill in values
 		for index in range(len(condition)):
 			var word = condition[index]
 			if int(word) > 0:
@@ -32,7 +36,7 @@ func interpret(CodeString):
 				var row = (int(word) - 1) % 3
 				condition[index] = str(senseBools[row][col])
 				
-		#Handle negations
+		# Handle negations
 		var index = 0
 		while index < len(condition) - 1:
 			var word = condition[index]
@@ -51,7 +55,7 @@ func interpret(CodeString):
 					print("mistake in not function")
 			index += 1
 			
-		#Handle AND / OR
+		# Handle AND / OR
 		index = 1
 		while index < len(condition) - 1:
 			var word = condition[index]
@@ -66,7 +70,7 @@ func interpret(CodeString):
 				condition.remove(index-1)
 				index -= 1
 			index += 1
-		#See what this evaluates to
+		# See what this evaluates to
 		if len(condition) == 1 and condition[0] == "True":
 			actions.append(action)
 	return actions
@@ -76,7 +80,15 @@ func _physics_process(delta):
 	# Update game logic here.
 	var nextMotion = Vector2()
 	
-	if false:
+	if debug:
+		# keyboard input for debugging
+		if Input.is_action_pressed("ui_left"):
+			nextMotion.x -= 1
+		if Input.is_action_pressed("ui_right"):
+			nextMotion.x += 1
+		if Input.is_action_pressed("ui_accept") and is_on_floor():
+			nextMotion.y -= 1
+	else:
 		var actions = interpret(code)
 		if actions.has("L"):
 			nextMotion.x -= 1
@@ -85,19 +97,11 @@ func _physics_process(delta):
 		if actions.has("S") and is_on_floor():
 			nextMotion.y -= 1
 			interpret(code)
-	else:
-		# keyboard input for debugging
-		if Input.is_action_pressed("ui_left"):
-			nextMotion.x -= 1
-		if Input.is_action_pressed("ui_right"):
-			nextMotion.x += 1
-		if Input.is_action_pressed("ui_accept") and is_on_floor():
-			nextMotion.y -= 1
 	
 	# Apply current motion
 	motion.x = SPEED * nextMotion.x
 	motion.y += JUMP_SPEED * nextMotion.y 
+	
 	# Apply gravity
 	motion.y += GRAVITY
-	
 	motion = move_and_slide(motion, UP)
