@@ -1,4 +1,4 @@
-extends "res://scripts/moveableItem.gd"
+extends "res://scripts/Inventory/moveableItem.gd"
 
 var inputNode
 var outputNode

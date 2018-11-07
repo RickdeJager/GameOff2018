@@ -1,4 +1,4 @@
-extends "res://scripts/moveableItem.gd"
+extends "res://scripts/Inventory/moveableItem.gd"
 
 var inputNodeA
 var inputNodeB
@@ -12,4 +12,4 @@ func _ready():
 func _process(delta):
 	var valueA = inputNodeA.value
 	var valueB = inputNodeB.value
-	outputNode.setValue(valueA or valueB)
+	outputNode.setValue(valueA and valueB)

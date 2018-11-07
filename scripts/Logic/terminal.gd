@@ -1,4 +1,4 @@
-extends "res://scripts/moveableItem.gd"
+extends "res://scripts/Inventory/moveableItem.gd"
 
 var action
 var player
@@ -9,7 +9,7 @@ func _ready():
 	# but it does simplify things for now so ¯\_(ツ)_/¯
 	action = name[-1]
 	# Again, this is not a great way of doing things and will have to be replaced with a propper signal call later
-	player = get_tree().get_root().get_node("Root/Player")
+	player = get_tree().get_root().get_node("Root/player")
 	input = get_node("inputNode")
 	
 func _process(delta):

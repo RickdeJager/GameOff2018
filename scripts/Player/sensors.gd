@@ -12,7 +12,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	parent = get_parent()
-	camera = parent.get_node("PlayerCamera")
+	camera = parent.get_node("camera")
 	screenSize = get_viewport_rect().size
 	senseBools = sense()
 

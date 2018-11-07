@@ -8,7 +8,7 @@ var beenRunning = true
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	camera = get_parent().get_node("Player/PlayerCamera")
+	camera = get_parent().get_node("player/camera")
 	root = get_tree().get_root().get_node("Root")
 	screenSize = get_viewport_rect().size
 

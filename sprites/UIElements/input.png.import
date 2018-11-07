@@ -2,18 +2,18 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/termS.png-9a9fe132fc4a03acdf0b81c6a1328ae1.stex"
+path="res://.import/input.png-03b796fb374c12f15cbb60bf649a990f.stex"
 
 [deps]
 
-source_file="res://sprites/termS.png"
-dest_files=[ "res://.import/termS.png-9a9fe132fc4a03acdf0b81c6a1328ae1.stex" ]
+source_file="res://sprites/UIElements/input.png"
+dest_files=[ "res://.import/input.png-03b796fb374c12f15cbb60bf649a990f.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
-compress/hdr_mode=1
+compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/not.png-7d0599b97ffa82d7edd9f0fe4e1e49ff.stex"
+path="res://.import/not.png-b9f49ce2da9fc54d7cd6daeb07f89c27.stex"
 
 [deps]
 
-source_file="res://sprites/not.png"
-dest_files=[ "res://.import/not.png-7d0599b97ffa82d7edd9f0fe4e1e49ff.stex" ]
+source_file="res://sprites/UIElements/not.png"
+dest_files=[ "res://.import/not.png-b9f49ce2da9fc54d7cd6daeb07f89c27.stex" ]
 
 [params]
 

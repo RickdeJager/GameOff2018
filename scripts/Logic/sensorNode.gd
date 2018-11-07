@@ -1,4 +1,4 @@
-extends "res://scripts/moveableItem.gd"
+extends "res://scripts/Inventory/moveableItem.gd"
 
 var sensors
 var outputNodes = []
@@ -9,7 +9,7 @@ func _ready():
 		if child is Area2D:
 			outputNodes.append(child)
 			
-	sensors = get_tree().get_root().get_node("Root").get_node("Player").get_node("Sensors")
+	sensors = get_tree().get_root().get_node("Root").get_node("player").get_node("sensors")
 
 func _process(delta):
 	for i in range(len(outputNodes)):

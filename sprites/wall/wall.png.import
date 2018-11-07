@@ -2,18 +2,18 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/termR.png-c2b20f5466aff4d99bb17bff8ff667d1.stex"
+path="res://.import/wall.png-b567b62eb4c94e107a27445384e9b77d.stex"
 
 [deps]
 
-source_file="res://sprites/termR.png"
-dest_files=[ "res://.import/termR.png-c2b20f5466aff4d99bb17bff8ff667d1.stex" ]
+source_file="res://sprites/wall/wall.png"
+dest_files=[ "res://.import/wall.png-b567b62eb4c94e107a27445384e9b77d.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
-compress/hdr_mode=1
+compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false

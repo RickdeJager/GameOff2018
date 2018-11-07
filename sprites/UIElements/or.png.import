@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/output.png-fce9699eb62124cdb086800a9098af10.stex"
+path="res://.import/or.png-8bf3496721bd6656d3ca0a5d7480c128.stex"
 
 [deps]
 
-source_file="res://sprites/output.png"
-dest_files=[ "res://.import/output.png-fce9699eb62124cdb086800a9098af10.stex" ]
+source_file="res://sprites/UIElements/or.png"
+dest_files=[ "res://.import/or.png-8bf3496721bd6656d3ca0a5d7480c128.stex" ]
 
 [params]
 
