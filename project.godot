@@ -12,11 +12,17 @@ config_version=3
 
 config/name="GameOff"
 run/main_scene="res://scenes/Root.tscn"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [debug]
 
 settings/fps/force_fps=60
+
+[display]
+
+window/size/resizable=false
+window/stretch/aspect="keep"
 
 [rendering]
 

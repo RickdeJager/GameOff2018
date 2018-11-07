@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall.png-202f71260357ef04e6e8c2cec090a94e.stex"
+path="res://.import/spike.png-0cebe70bad75856843a16cc8ffb6aeb3.stex"
 
 [deps]
 
-source_file="res://sprites/wall.png"
-dest_files=[ "res://.import/wall.png-202f71260357ef04e6e8c2cec090a94e.stex" ]
+source_file="res://sprites/spike/spike.png"
+dest_files=[ "res://.import/spike.png-0cebe70bad75856843a16cc8ffb6aeb3.stex" ]
 
 [params]
 

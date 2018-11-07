@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://sprites/player/player.gd" type="Script" id=1]
-[ext_resource path="res://sprites/player.png" type="Texture" id=2]
-[ext_resource path="res://sprites/player/sensors.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Player/movement.gd" type="Script" id=1]
+[ext_resource path="res://sprites/player/player.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Player/sensors.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="player" type="KinematicBody2D" groups=[
+[node name="player" type="KinematicBody2D" index="0" groups=[
 "player",
 ]]
 
@@ -19,7 +19,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
-debug = false
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
@@ -27,7 +26,7 @@ texture = ExtResource( 2 )
 
 [node name="hitbox" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 1.90735e-006, 1.90735e-006 )
+position = Vector2( 1.90735e-06, 1.90735e-06 )
 scale = Vector2( 3.2, 3.2 )
 shape = SubResource( 1 )
 

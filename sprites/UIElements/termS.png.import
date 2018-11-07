@@ -2,21 +2,21 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spike.png-55b71ac6866a2c943ab8c832a6cf27a0.stex"
+path="res://.import/termS.png-c3f5d432e5e7438ceaeebdb0804c3ae0.stex"
 
 [deps]
 
-source_file="res://sprites/spike.png"
-dest_files=[ "res://.import/spike.png-55b71ac6866a2c943ab8c832a6cf27a0.stex" ]
+source_file="res://sprites/UIElements/termS.png"
+dest_files=[ "res://.import/termS.png-c3f5d432e5e7438ceaeebdb0804c3ae0.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
-compress/hdr_mode=0
+compress/hdr_mode=1
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

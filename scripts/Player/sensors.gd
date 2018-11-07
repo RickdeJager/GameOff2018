@@ -12,7 +12,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	parent = get_parent()
-	camera = parent.get_node("PlayerCamera")
+	camera = parent.get_node("camera")
 	screenSize = get_viewport_rect().size
 	senseBools = sense()
 
@@ -41,9 +41,8 @@ func sense():
 		senseBools.append([])
 		for j in range(-SENSE_GRID_SIZE/2, SENSE_GRID_SIZE/2 + 1):
 			var coord = Vector2(parent.global_position) + Vector2(i * GRID_SIZE, j * GRID_SIZE)
-			#Get items at this coord, limit '1', 2147483647 is the layer value
+			# Get items at this coord, limit '1', 2147483647 makes it check all levels
 			var results = space.intersect_point(coord, 1, [], 2147483647)
-			#Add true if it is a collider, otherwise false
+			# Add true if it is a collider, otherwise false
 			senseBools[i-1].append(len(results) > 0 and results[0].has("collider"))
-	
 	return senseBools
