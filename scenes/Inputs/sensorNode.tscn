@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Logic/sensorNode.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Gates/elements/output.tscn" type="PackedScene" id=2]
-
+[ext_resource path="res://sprites/UIElements/moveBar.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 60.1601, 10.4368 )
+extents = Vector2( 66.4911, 9.37093 )
 
 [node name="sensorNode" type="Area2D"]
 
@@ -56,7 +56,13 @@ position = Vector2( 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="9"]
 
-position = Vector2( 0, -57 )
+position = Vector2( 0, -56 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="10"]
+
+position = Vector2( 0, -56 )
+texture = ExtResource( 3 )
 
 

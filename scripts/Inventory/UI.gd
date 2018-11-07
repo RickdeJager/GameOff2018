@@ -1,18 +1,17 @@
 extends PanelContainer
 
 var screenSize
-var camera
 var root
 var beenRunning = true
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	camera = get_parent().get_node("player/camera")
 	root = get_tree().get_root().get_node("Root")
 	screenSize = get_viewport_rect().size
 
 func _process(delta):
+	var camera = root.player.get_node("camera")
 	if root.running:
 		if not beenRunning:
 			camera.offset = Vector2(0, 0)

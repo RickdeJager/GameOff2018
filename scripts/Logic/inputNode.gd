@@ -4,6 +4,7 @@ var connection
 var value = false
 var editor
 var root
+var connectionRef
 
 func _ready():
 	root = get_tree().get_root().get_node("Root")
@@ -11,8 +12,12 @@ func _ready():
 	editor = get_node("../..")
 
 func _process(delta):
-	if connection:
+	if not connection:
+		setValue(false)
+	# Horrible hack to stop this from crashing after level loads
+	if connection and connectionRef.get_ref():
 		setValue(connection.value)
+	update()
 	
 func _draw():
 	if connection:
@@ -42,6 +47,7 @@ func _input(event):
 
 func setConnection(newConnection):
 	connection = newConnection
+	connectionRef = weakref(connection)
 	setValue(connection.value)
 	
 func setValue(newValue):
