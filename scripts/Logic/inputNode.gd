@@ -20,14 +20,22 @@ func _process(delta):
 	update()
 	
 func _draw():
-	if connection:
-		var to = connection.global_position - global_position
-		var color
-		if connection.value:
-			color = Color("#ff0000")
-		else:
-			color = Color("#eeeeee")
-		draw_line(Vector2(0, 0), to , color, 1.0)
+	if not connection:
+		return
+	
+	var to = connection.global_position - global_position
+	var color
+	if connection.value:
+		color = Color("#ff0000")
+	else:
+		color = Color("#eeeeee")
+	
+	var curve = Curve2D.new()
+	
+	curve.add_point(Vector2(0, 0), Vector2(0, 0), Vector2(-100, 0))
+	curve.add_point(to, Vector2(100, 0))
+	
+	draw_polyline(curve.get_baked_points(), color, 2.0)
 	
 func _input(event):
 	if not event is InputEventMouseButton or root.running:
