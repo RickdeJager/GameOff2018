@@ -19,7 +19,7 @@ func setValue(newValue):
 	value = newValue
 
 func _input(event):
-	if not event is InputEventMouseButton or root.running:
+	if not event is InputEventMouseButton:
 		return 
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed() and not editor.dragging:
 		# This may break in the future!

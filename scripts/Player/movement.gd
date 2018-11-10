@@ -9,11 +9,13 @@ var motion = Vector2()
 var sensors
 var actions = []
 var groundTime = 0
+var root
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	sensors = get_node("sensors")
+	root = get_tree().get_root().get_node("Root")
 	
 func addAction(action):
 	actions.append(action)
@@ -21,7 +23,7 @@ func addAction(action):
 func _physics_process(delta):
 	if is_on_floor() and groundTime < REQUIRED_GROUND_TIME:
 		groundTime += delta
-	var root = get_tree().get_root().get_node("Root")
+	root = get_tree().get_root().get_node("Root")
 	if not root.running:
 		return
 	# Called every frame. Delta is time since last frame.
@@ -46,3 +48,5 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, UP)
 	# Clear last frames actions
 	actions = []
+	#var rtt = root.get_node("UI/viewport").get_texture()
+	#get_node("view").texture = rtt

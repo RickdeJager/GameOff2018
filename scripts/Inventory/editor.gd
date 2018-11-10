@@ -28,7 +28,7 @@ func setGates(numAnd, numOr, numNot, addSensors = false):
 		else:
 			child.input.value = false
 			child.input.connection = null
-
+			
 	for i in range(numAnd):
 		var instance = andGate.instance()
 		instance.position = pickASpot()

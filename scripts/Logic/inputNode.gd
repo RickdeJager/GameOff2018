@@ -38,7 +38,7 @@ func _draw():
 	draw_polyline(curve.get_baked_points(), color, 2.0)
 	
 func _input(event):
-	if not event is InputEventMouseButton or root.running:
+	if not event is InputEventMouseButton:
 		return 
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and not event.is_pressed() and editor.dragging:
 		# This may break in the future!
@@ -46,8 +46,8 @@ func _input(event):
 		var results = space.intersect_point(get_global_mouse_position(), 1, [], 2147483647)
 		if len(results) > 0 and results[0]['collider'] == self and editor.lastInput:
 			# Don't connect the gate input to it's own output
-			if editor.lastInput.get_parent() == get_parent():
-				return
+			#if editor.lastInput.get_parent() == get_parent():
+			#	return
 			setConnection(editor.lastInput)
 			editor.lastInput = null
 			editor.dragging = false

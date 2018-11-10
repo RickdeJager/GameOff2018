@@ -59,4 +59,6 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
+[node name="view" type="Sprite" parent="." index="4"]
+
 

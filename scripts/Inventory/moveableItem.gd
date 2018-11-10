@@ -17,7 +17,7 @@ func _input(event):
 	if event is InputEventMouse and moving:
 		global_position = get_global_mouse_position() + offset
 		
-	if not event is InputEventMouseButton or root.running:
+	if not event is InputEventMouseButton:
 		return
 		
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.is_pressed():

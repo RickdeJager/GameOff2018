@@ -18,12 +18,12 @@ func loadLevel(levelID):
 	var nextScene = load("res://scenes/Levels/Level"+str(levelID)+".tscn")
 	if nextScene:
 		#Unload current level
-		for child in get_children():
+		for child in get_node("c/c1/Viewport").get_children():
 			if "level" in child.name.to_lower():
 				child.queue_free()
 		var nextLevel = nextScene.instance()
 		nextLevel.name = "level"+str(levelID)
-		add_child(nextLevel)
+		get_node("c/c1/Viewport").add_child(nextLevel)
 		currentLevel = levelID
 		
 	# You've reached the last level! not sure what to do...
