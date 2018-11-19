@@ -12,9 +12,9 @@ func _process(delta):
 		running = not running
 
 func startNextLevel():
-	loadLevel(currentLevel+1)
+	loadLevel(currentLevel+1, false)
 		
-func loadLevel(levelID):
+func loadLevel(levelID, restart):
 	var nextScene = load("res://scenes/Levels/Level"+str(levelID)+".tscn")
 	if nextScene:
 		#Unload current level
@@ -22,6 +22,7 @@ func loadLevel(levelID):
 			if "level" in child.name.to_lower():
 				child.queue_free()
 		var nextLevel = nextScene.instance()
+		nextLevel.init(restart)
 		nextLevel.name = "level"+str(levelID)
 		get_node("c/c1/Viewport").add_child(nextLevel)
 		currentLevel = levelID
@@ -32,4 +33,4 @@ func loadLevel(levelID):
 		player.motion.y -= 2000
 		
 func restartLevel():
-	loadLevel(currentLevel)
+	loadLevel(currentLevel, true)

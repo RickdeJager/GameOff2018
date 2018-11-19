@@ -19,6 +19,10 @@ func _ready():
 	editor = get_node("../../../c2/Viewport2/UI/Main/Editor")
 	randomize()
 	
+func init(restart):
+	if (restart):	# If were restarting the level, keep the gates
+		done = true
+	
 func _process(delta):
 	# If we've been falling for too long, restart the level
 	if get_node("player").motion.y > 1500:

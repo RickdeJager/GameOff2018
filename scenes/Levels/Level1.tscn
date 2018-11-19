@@ -19,6 +19,8 @@ position = Vector2( 67.1622, 61.8918 )
 
 [node name="terrain" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="wall" parent="terrain" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 32, 192 )
